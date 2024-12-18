@@ -1,0 +1,30 @@
+{
+    "cmake.configureSettings": {
+        // Use environment variables or relative paths where possible
+        "CMAKE_PREFIX_PATH": "${env:QT_DIR}",
+        
+        // Fallback paths (adjust as needed)
+        "CMAKE_FALLBACK_PREFIX_PATH": [
+            // Linux typical paths
+            "/usr/lib/x86_64-linux-gnu/cmake",
+            "/usr/local/qt",
+            
+            // Windows typical paths
+            "C:/Qt/5.15.2/msvc2019_64",
+            "C:/Qt/6.x.x/msvc2019_64"
+        ]
+    },
+    
+    // Build directory configuration
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    
+    // Detect and configure based on platform
+    "cmake.generator": "${command:cmake.generator}",
+    
+    // Compiler path detection
+    "C_Cpp.default.compilerPath": "${command:cmake.launchTargetPath}",
+    
+    // IntelliSense mode based on detected compiler
+    // "C_Cpp.default.intelliSenseMode": "${command:cmake.intelliSenseMode}"
+}
